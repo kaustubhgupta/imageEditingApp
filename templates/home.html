@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="fs-2 text">Edit Monkey - Edit your images</h1>
+<form action="/edit" method="post", enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="formfile" class="form-label">Select an Image to edit</label>
+        <input type="file" class="form-control" name="file">
+    </div>
+    <div class="form-floating">
+        <select name="inputaction" class="form-select" class="form-select">
+            <option value="cpng" class="value">Convert to PNG</option>
+            <option value="cgray" class="value">Convert to Grayscale</option>
+            <option value="cwebp" class="value">Convert to Webp</option>
+            <option value="cjpg" class="value">Convert to JPG</option>
+        </select>
+        <label for="floatingSelect">Select an Editing Operation</label>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+</form>
+{% endblock %}
